@@ -1,0 +1,23 @@
+<h1>
+    <a href="https://developer.marvel.com/">
+        Marvel&copy; Search
+    </a>
+</h1>
+<main>
+    <div>
+        <input type="text" id="search" placeholder="Enter character first name">
+        <button (click)="fetchData()">
+            <lucide-angular [size]="16" name="search" class="my-icon" />
+        </button>
+    </div>
+    <div *ngIf="data.length > 0">
+        <ul>
+            <li *ngFor="let item of data">
+                <a href="">
+                    <img src="{{ item.imageUri }}" class="card-image" alt="{{ item.name }}">
+                    <p>{{ item.name }}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</main>
